@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Мой стильный сайт</title>
+<!-- Подключение шрифтов Google -->
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+<style>
+  /* Общие стили */
+  body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(135deg, #a7d5f0, #f9d0e3);
+    color: #333;
+    line-height: 1.6;
+    scroll-behavior: smooth;
+  }
+
+  /* Верхнее меню */
+  nav {
+    display: flex;
+    justify-content: center;
+    background-color: rgba(128, 222, 234, 0.8);
+    padding: 15px 30px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 999;
+  }
+
+  nav a {
+    margin: 0 25px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    color: #006064;
+    transition: color 0.3s, transform 0.3s;
+  }
+
+  nav a:hover {
+    color: #ff4081;
+    transform: scale(1.1);
+  }
+
+  /* Заголовки */
+h2 {
+  font-size: 2.5em;
+  text-align: center;
+  margin-top: 40px;
+  color: #006064;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+h3 {
+  font-size: 1.8em;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  color: #004d40;
+  text-align: center;
+}
+
+/* Разделы */
+.section {
+  max-width: 1000px;
+  margin: 20px auto;
+  padding: 20px;
+  background: rgba(255,255,255,0.8);
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* Место для фото без фона */
+.photo-placeholder {
+  width: 300px;
+  height: 300px;
+  margin: 20px auto;
+  border: 3px dashed #666;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2em;
+  color: #666;
+  background-color: rgba(255,255,255,0.5);
+}
+
+.photo-placeholder:hover {
+  background-color: rgba(255,255,255,0.8);
+}
+
+/* Фото в портфолио */
+.portfolio {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.portfolio img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.portfolio img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+/* Стрелка */
+.arrow {
+  display: inline-block;
+  margin-left: 10px;
+  font-size: 1.5em;
+  color: #ff4081;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.arrow:hover {
+  transform: translateY(-3px);
+}
+
+/* Футер */
+footer {
+  background-color: rgba(128, 222, 234, 0.8);
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+  font-size: 1.2em;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+}
+
+/* Адаптивность для всех устройств */
+@media(max-width: 1200px) {
+  .section {
+    max-width: 95%;
+    padding: 15px;
+  }
+}
+
+@media(max-width: 768px) {
+  nav {
+    flex-wrap: wrap;
+    padding: 10px 15px;
+  }
+
+  nav a {
+    margin: 5px 10px;
+    font-size: 14px;
+  }
+
+  h2 {
+    font-size: 1.8em;
+    margin-top: 20px;
+  }
+
+  h3 {
+    font-size: 1.4em;
+    margin-top: 20px;
+  }
+
+  .section {
+    margin: 15px auto;
+    padding: 15px;
+  }
+
+  .photo-placeholder {
+    width: 90%;
+    max-width: 300px;
+    height: auto;
+    min-height: 200px;
+  }
+
+  .portfolio {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .portfolio img {
+    width: 90%;
+    max-width: 300px;
+    height: auto;
+  }
+
+  footer {
+    padding: 20px 15px;
+    font-size: 1em;
+  }
+
+  footer div {
+    flex-direction: column;
+  }
+
+  .arrow {
+    font-size: 1.3em;
+  }
+}
+
+@media(max-width: 480px) {
+  nav {
+    padding: 8px 10px;
+  }
+
+  nav a {
+    margin: 5px 8px;
+    font-size: 12px;
+  }
+
+  h2 {
+    font-size: 1.5em;
+    margin-top: 15px;
+  }
+
+  h3 {
+    font-size: 1.2em;
+    margin-top: 15px;
+  }
+
+  .section {
+    margin: 10px auto;
+    padding: 12px;
+  }
+
+  .photo-placeholder {
+    width: 95%;
+    min-height: 150px;
+    font-size: 1em;
+  }
+
+  .portfolio img {
+    width: 95%;
+  }
+
+  footer {
+    padding: 15px 10px;
+    font-size: 0.9em;
+  }
+
+  .arrow {
+    font-size: 1.2em;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- Верхнее меню с переходами на другие страницы -->
+<nav>
+  <a href="wordtab.html">work tab</a>
+  <a href="index.html">main</a>
+  <a href="kontakt.html">contacts   </a>
+</nav>
+
+<!-- Первая страница -->
+<h2>SXHN3</h2>
+
+
+<!-- Портфолио -->
+<h3>Portfolio</h3>
+<div class="section" id="portfolio-section">
+  <div class="portfolio">
+    <img src="renders/photo_2025-11-03_20-33-00.jpg" alt="Фотка 1" />
+    <img src="renders/photo_2025-11-03_20-33-00.jpg" alt="Фотка 2" />
+    <img src="renders/photo_2025-11-03_20-33-00.jpg" alt="Фотка 3" />
+       <img src="renders/photo_2025-11-03_20-33-00.jpg" alt="Фотка 1" />
+    <img src="renders/photo_2025-11-03_20-33-00.jpg" alt="Фотка 2" />
+    <img src="renders/photo_2025-11-03_20-33-00.jpg" alt="Фотка 3" />
+       <img src="renders/photo_2025-11-03_20-33-00.jpg" alt="Фотка 1" />
+    <img src="renders/photo_2025-11-03_20-33-00.jpg" alt="Фотка 2" />
+    <img src="renders/photo_2025-11-03_20-33-00.jpg" alt="Фотка 3" />
+       <img src="renders/photo_2025-11-03_20-33-00.jpg" alt="Фотка 1" />
+    <img src="renders/photo_2025-11-03_20-33-00.jpg" alt="Фотка 2" />
+    <img src="renders/photo_2025-11-03_20-33-00.jpg" alt="Фотка 3" />
+  </div>
+</div>
+
+<!-- Стрелка вверх -->
+<div style="text-align:right; padding:20px;">
+  <span class="arrow" id="toTop">↑</span>
+</div>
+
+<!-- Исправленный футер -->
+<footer style="background-color:rgba(128, 222, 234, 0.8); color:#006064; padding:40px 20px; font-family:'Montserrat', sans-serif;">
+  <div style="max-width:1200px; margin:auto; display:flex; flex-wrap:wrap; justify-content:center; align-items:center; min-height: 100px;">
+    <!-- Контакты -->
+    <div style="flex:1; min-width:200px; margin-bottom:20px; text-align:center;">
+      <h4 style="margin-bottom:10px;">Контакты</h4>
+      <p style="margin:0;">Email: <a href="mailto:sohnehhr@bk.ru" style="color:#006064; text-decoration:underline;">sohnehhr@bk.ru</a></p>
+      <p style="margin:0;">Telegram: @ayagiray</p>
+    </div>
+  </div>
+  <div style="text-align:center; margin-top:20px; font-size:14px; color:#006064;">
+    &copy; 2024-2025, сделал сайт sohne
+  </div>
+</footer>
+
+<!-- Скрипт для прокрутки вверх и открытия фото -->
+<script>
+  document.getElementById('toTop').addEventListener('click', function() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  // Открытие фото портфолио на весь экран
+  document.querySelectorAll('.portfolio img').forEach(img => {
+    img.addEventListener('click', () => {
+      const overlay = document.createElement('div');
+      overlay.style.position = 'fixed';
+      overlay.style.top = 0;
+      overlay.style.left = 0;
+      overlay.style.width = '100%';
+      overlay.style.height = '100%';
+      overlay.style.backgroundColor = 'rgba(0,0,0,0.8)';
+      overlay.style.display = 'flex';
+      overlay.style.alignItems = 'center';
+      overlay.style.justifyContent = 'center';
+      overlay.style.cursor = 'zoom-out';
+      overlay.style.zIndex = 9999;
+
+      const bigImg = document.createElement('img');
+      bigImg.src = img.src;
+      bigImg.style.maxWidth = '90%';
+      bigImg.style.maxHeight = '80%';
+      bigImg.style.borderRadius = '10px';
+      bigImg.style.boxShadow = '0 4px 20px rgba(0,0,0,0.5)';
+      
+      overlay.appendChild(bigImg);
+      document.body.appendChild(overlay);
+
+      overlay.addEventListener('click', () => {
+        document.body.removeChild(overlay);
+      });
+    });
+  });
+</script>
+
+</body>
+</html>
